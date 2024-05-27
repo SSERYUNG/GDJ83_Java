@@ -12,20 +12,18 @@ public class Study8 {
 		for(int j=0;j<3;j++) {
 			System.out.println("1.단발 2. 점사");
 			int tan = sc.nextInt();
+			int chong = 10;
+			String sound = "타타탕";
 			
 			if (tan==1){
-				for(int i=0;i<30;i++) {
-					
-					System.out.println("탕");
-				}
+				chong = 30;
+				sound = "탕";
 				
-			}else if (tan==2) {
-				for(int i=0;i<10;i++) {
+			}
+			for(int i=1;i<=chong;i++) {
 				
-					System.out.println("타타탕");
-				}
-			}else {
-				j--;
+					System.out.println(sound);
+				
 			}
 		}
 		
