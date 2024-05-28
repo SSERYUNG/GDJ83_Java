@@ -78,6 +78,23 @@ public class S2_2 {
 				}
 
 				break;
+			case 4:
+
+				for (int i = 0; i < avgs.length - 1; i++) {
+					for (int j = i + 1; j < avgs.length; i++) {
+						if (avgs[i] > avgs[j]) {
+							st[i] = st[j];
+							bun[i] = bun[j];
+							gook[i] = gook[j];
+							young[i] = young[j];
+							soo[i] = soo[j];
+							totals[i] = totals[j];
+							avgs[i] = avgs[j];
+						}
+					}
+				}
+
+				break;
 			default:
 				flag = false;
 			}
