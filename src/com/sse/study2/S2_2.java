@@ -79,7 +79,7 @@ public class S2_2 {
 
 				break;
 			case 4:
-
+//미완성...
 				for (int i = 0; i < avgs.length - 1; i++) {
 					for (int j = i + 1; j < avgs.length; i++) {
 						if (avgs[i] > avgs[j]) {
