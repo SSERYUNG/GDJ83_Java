@@ -9,9 +9,4 @@ public class Student {
 	int total;
 	double avg;
 
-	public void info() {
-		int num = 10;
-		System.out.println("info 실행");
-	}
-
 }

@@ -4,8 +4,24 @@ import java.util.Scanner;
 
 public class StudentService {
 
+	Scanner sc = new Scanner(System.in);
+
+	public Student findByNum(Student[] students) {
+		System.out.println("학생 번호를 입력하세요");
+		int n = sc.nextInt();
+		Student student = null;
+
+		for (int i = 0; i < students.length; i++) {
+			if (n == students[i].num) {
+				return students[i];
+			}
+
+		}
+		return student;
+
+	}
+
 	public Student[] makeStudent() {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("학생의 수를 입력하세요");
 		int count = sc.nextInt();
 

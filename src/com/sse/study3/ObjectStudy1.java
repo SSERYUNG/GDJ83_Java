@@ -4,7 +4,14 @@ public class ObjectStudy1 {
 	public static void main(String[] args) {
 
 		StudyReturn sr = new StudyReturn();
-		sr.t2();
+		int mm = 5000000;
+		sr.t4(mm);
+
+		Test test = new Test();
+		test.level = 1;
+
+		Test test2 = sr.t5(test);
+		System.out.println(test2.level);
 
 //		// 학생 객체 생성
 //		// new 클래스명 () ->객체의 주소가 반환
