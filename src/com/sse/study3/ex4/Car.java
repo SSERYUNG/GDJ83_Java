@@ -24,17 +24,23 @@ public class Car {
 
 	public Car(int price) {
 		this.price = price;
+		this.color = "Black";
+		this.brand = "k3";
+		this.company = "kia";
 	}
 
 	public Car(int price, String color) {
 		this.price = price;
 		this.color = color;
+		this.brand = "k3";
+		this.company = "kia";
 	}
 
 	public Car(int price, String color, String brand) {
 		this.price = price;
 		this.color = color;
 		this.brand = brand;
+		this.company = "kia";
 	}
 
 	public void info() {
