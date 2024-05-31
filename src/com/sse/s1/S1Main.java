@@ -1,14 +1,15 @@
 package com.sse.s1;
 
-import com.sse.s2.MiddleStudent;
-
 public class S1Main {
 
 	public static void main(String[] args) {
 
-		MiddleStudent ms = new MiddleStudent();
+		Object obj = new Object();
 
-		ms.info();
+		Test test = new Test();
+		String st = test.toString();
+		System.out.println(st);
+		System.out.println(String.CASE_INSENSITIVE_ORDER);
 
 	}
 
