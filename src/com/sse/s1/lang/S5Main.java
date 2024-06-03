@@ -19,7 +19,7 @@ public class S5Main {
 			System.out.println(datas[i]);
 		}
 
-		String result = name.valueOf('a');
+		String result = String.valueOf('a');
 		System.out.println(result);
 
 	}
