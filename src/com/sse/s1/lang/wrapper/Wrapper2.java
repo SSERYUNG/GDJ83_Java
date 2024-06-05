@@ -13,9 +13,9 @@ public class Wrapper2 {
 
 		while (flag) {
 
-			boolean pass1 = true;
-			boolean pass2 = true;
-			boolean pass3 = true;
+			boolean pass1 = false;
+			boolean pass2 = false;
+			boolean pass3 = false;
 
 			System.out.println("비밀번호를 입력하세요");
 			String pw = sc.next();
@@ -61,7 +61,7 @@ public class Wrapper2 {
 
 //			길이 검열,특수문자 검열...?
 
-			boolean finale = true;
+			boolean finale = false;
 			if (pass1 && pass2 && pass3) {
 				finale = true;
 			} else {
