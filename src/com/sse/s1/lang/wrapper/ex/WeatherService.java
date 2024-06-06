@@ -115,14 +115,12 @@ public class WeatherService {
 		WeatherDTO[] minusar = new WeatherDTO[ar.length - 1];
 
 		int count = ar.length;
-		int num = 0;
 		boolean flag = false;
 
 		for (int i = 0; i < count; i++) {
 			if (city.equals(ar[i].getCity())) {
 
-//				num++;
-//				count--;
+
 				flag = true;
 				for (int j = i+1; j < count; j++) {
 					minusar[j-1] = ar[j];
