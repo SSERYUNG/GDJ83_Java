@@ -59,7 +59,7 @@ public class Wrapper2 {
 				}
 			}
 
-//			길이 검열,특수문자 검열...?
+//			길이 검열
 
 			boolean finale = false;
 			if (pass1 && pass2 && pass3) {

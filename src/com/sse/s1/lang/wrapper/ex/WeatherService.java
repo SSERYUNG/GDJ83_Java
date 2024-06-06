@@ -114,18 +114,31 @@ public class WeatherService {
 		String city = sc.next();
 		WeatherDTO[] minusar = new WeatherDTO[ar.length - 1];
 
-		int count = 0;
+		int count = ar.length;
+		int num = 0;
+		boolean flag = false;
 
-		for (int i = 0; i < ar.length; i++) {
+		for (int i = 0; i < count; i++) {
 			if (city.equals(ar[i].getCity())) {
-				count++;
-				continue;
+
+//				num++;
+//				count--;
+				flag = true;
+				for (int j = i+1; j < count; j++) {
+					minusar[j-1] = ar[j];
+
+				}
+				break;
+			} else {
+				if(i==count-1) {
+					break;
+				}
+				minusar[i] = ar[i];
 			}
-			minusar[i - count] = ar[i];
 
 		}
 
-		if (count != 0) {
+		if (flag) {
 			System.out.println("날씨 정보 삭제 완료, 처음으로 돌아갑니다");
 			return minusar;
 		} else {
