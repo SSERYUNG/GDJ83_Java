@@ -35,7 +35,15 @@ public class NameCardController {
 				ncv.oneview(onecard);
 				break;
 			case 3:
-
+				namear = ncs.add(namear);
+				System.out.println("새로운 명함 추가가 완료됐습니다. 처음으로 돌아갑니다.");
+				break;
+			case 4:
+				 ncs.remove(namear);
+				 break;
+			default:
+				System.out.println("프로그램을 종료합니다");
+				flag = false;
 			}
 		}
 	}

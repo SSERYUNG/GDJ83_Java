@@ -63,4 +63,48 @@ public class NameCardService {
 		}
 
 	}
+	
+	public ArrayList<NameCardDTO> add(ArrayList<NameCardDTO> ar) {
+		System.out.println("새로운 명함의 정보를 입력 받습니다.");
+		System.out.println("이름을 입력하세요");
+		String name = sc.next();
+		System.out.println("전화번호를 입력하세요");
+		String num = sc.next();
+		System.out.println("회사명을 입력하세요");
+		String company = sc.next();
+		System.out.println("메일을 입력하세요");
+		String mail = sc.next();
+		
+		NameCardDTO newcard = new NameCardDTO();
+		
+		newcard.setName(name);
+		newcard.setPhone(num);
+		newcard.setCompany(company);
+		newcard.setMail(mail);
+		
+		ar.add(newcard);
+		return ar;
+	}
+	
+	public ArrayList<NameCardDTO> remove(ArrayList<NameCardDTO> ar) {
+		System.out.println("삭제를 원하는 명함의 이름을 입력하세요");
+		String name = sc.next();
+		boolean flag = false;
+		
+		for(int i=0;i<ar.size();i++) {
+			
+			if(name.equals(ar.get(i).getName())) {
+				ar.remove(i);
+				flag=true;
+				break;
+			}
+		}
+		if(flag) {
+			System.out.println("삭제를 완료했습니다. 처음으로 돌아갑니다");
+			return ar;
+		}else {
+			System.out.println("해당하는 이름의 명함이 없습니다. 처음으로 돌아갑니다.");
+			return ar;
+		}
+	}
 }
