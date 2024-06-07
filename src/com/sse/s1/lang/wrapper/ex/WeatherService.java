@@ -1,6 +1,8 @@
 package com.sse.s1.lang.wrapper.ex;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WeatherService {
 
@@ -15,14 +17,50 @@ public class WeatherService {
 		this.sb.append(" -대구   , 11.1  -태풍  -   70");
 	}
 
+//	엄청 길게 죽죽 있는 String타입을 나누는 준비를 하는 메서드
 	public WeatherDTO[] init() {
 		String info = this.sb.toString();
 		info = info.replace(",", "-");
 
-		WeatherDTO[] wdtoar = this.getWeathers(info);
+		WeatherDTO[] wdtoar = this.useTokenizer(info);
 		return wdtoar;
 	}
 
+//	엄청 길게 죽죽 있는 String타입을 StringTokenizer를 사용하여 나누는 메서드
+	private WeatherDTO[] useTokenizer(String info) {
+
+		ArrayList<WeatherDTO> arrays = new ArrayList<WeatherDTO>();
+
+		StringTokenizer st = new StringTokenizer(info, "-");
+		WeatherDTO[] usetoken = new WeatherDTO[st.countTokens() / 4];
+
+		int i = 0;
+
+		while (st.hasMoreTokens()) {
+
+			WeatherDTO temp = new WeatherDTO();
+
+			String city = st.nextToken().trim();
+			double gion = Double.parseDouble(st.nextToken().trim());
+			String status = st.nextToken().trim();
+			int humidity = Integer.parseInt(st.nextToken().trim());
+
+			temp.setCity(city);
+			temp.setGion(gion);
+			temp.setStatus(status);
+			temp.setHumidity(humidity);
+
+			arrays.add(temp);
+
+			usetoken[i] = temp;
+			i++;
+		}
+
+		return usetoken;
+
+	}
+
+//	엄청 길게 죽죽 있는 String타입을 배열...?을 사용하여 나누는 메서드
 	private WeatherDTO[] getWeathers(String info) {
 		String[] infoslice = info.split("-");
 		for (int i = 0; i < infoslice.length; i++) {
@@ -120,15 +158,14 @@ public class WeatherService {
 		for (int i = 0; i < count; i++) {
 			if (city.equals(ar[i].getCity())) {
 
-
 				flag = true;
-				for (int j = i+1; j < count; j++) {
-					minusar[j-1] = ar[j];
+				for (int j = i + 1; j < count; j++) {
+					minusar[j - 1] = ar[j];
 
 				}
 				break;
 			} else {
-				if(i==count-1) {
+				if (i == count - 1) {
 					break;
 				}
 				minusar[i] = ar[i];
